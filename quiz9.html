@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Risultato Finale</title>
+  <link rel="stylesheet" href="css1.css">
+</head>
+<body>
+  <h1>Complimenti! Hai finito il quiz</h1>
+  <div id="punteggio-final"></div>
+  <div id="messaggio"></div>
+  
+  <script>
+    let punteggio = parseInt(sessionStorage.getItem("punteggio")) || 0;
+
+    document.getElementById("punteggio-final").innerText = "Il tuo punteggio: " + punteggio;
+
+    let messaggio = "";
+
+    if (punteggio >= 50) {
+      messaggio = "Wow! Sei un vero esperto di frattali! ";
+    } else {
+      messaggio = "Non preoccuparti, la pratica rende perfetti! ";
+    }
+
+    document.getElementById("messaggio").innerText = messaggio;
+  </script>
+</body>
+</html>
